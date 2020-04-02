@@ -33,6 +33,7 @@ När nu paketet "eloquent.researcher" laddas så har användaren direkt tillgån
 setwd("~/Desktop/myproject/Program")
 library("eloquent.researcher")
 EMUDB
+[1] "<emuDBhandle> (dbName = 'src', basePath = '[....]/Desktop/myproject/Data/src_emuDB')"
 list_files(EMUDB)
 ```
 som förstås i detta fall resulterar i en tom "tibble" (men inget fel). EMUDB kan nu användas för att söka i, och köra signalanalys på, en Emu-databas. 

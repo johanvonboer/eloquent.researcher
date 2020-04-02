@@ -1,0 +1,9 @@
+Package: eloquent.researcher
+Title: This package sets up a well defined working environment for speech science at Humlab DigiTal, Umeå University.
+Version: 0.0.0.9000
+Description: An emuR environment framwork for Humlab DigiTal
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    emuR

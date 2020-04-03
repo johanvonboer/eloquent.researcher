@@ -36,4 +36,21 @@ EMUDB
 [1] "<emuDBhandle> (dbName = 'src', basePath = '[....]/Desktop/myproject/Data/myproject_emuDB')"
 list_files(EMUDB)
 ```
-som förstås i detta fall resulterar i en tom "tibble" (men inget fel). EMUDB kan nu användas för att söka i, och köra signalanalys på, en Emu-databas. 
+som förstås i detta fall resulterar i en tom "tibble" (men inget fel). EMUDB kan nu användas för att söka i, och köra signalanalys på, en Emu-databas.
+
+Detta paket ska kompletteras med en .Rprofile-fil i varje användares ~. Ett förslag som verkar fungera är:
+
+
+```r
+# .Rprofile -- commands to execute at the beginning of each R session       
+#                                                                           
+# You can use this file to load packages, set options, etc.                 
+#                                                                           
+# NOTE: changes in this file won't be reflected until after you quit        
+# and start a new session                                                   
+#                                                                           
+                                                                       
+options(defaultPackages="eloquent.researcher")                             
+setwd("~/Program")
+```
+ som ser till att detta paket alltid ska laddas i en R-session, och sätter working directory till Program-katalogen.                                                                            

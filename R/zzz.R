@@ -12,8 +12,12 @@
   if(dir.exists(dataPath)){
     emuDBpath <- file.path(dataPath,
                            paste0(project.name,emuR:::emuDB.suffix))
+    if(dir.exists(emuDBpath)){
+      assign("EMUDB",emuR::load_emuDB(emuDBpath,verbose = FALSE), envir = .GlobalEnv)
+    }else{
+      warning("The database\'",emuDBpath,"\' does not exist.\n You will not have EMUDB global variable available to you in the session.")
+    }
 
-    assign("EMUDB",emuR::load_emuDB(emuDBpath,verbose = FALSE), envir = .GlobalEnv)
   }
 }
 

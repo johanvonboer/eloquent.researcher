@@ -8,4 +8,20 @@ LazyData: true
 Imports: 
     emuR,
     wrassp,
-    git2r
+    git2r,
+    ggplot2,
+    dplyr,
+    tidyr,
+    stringr,
+    ggpubr,
+    ggsignif,
+    ggsci,
+    ggridges,
+    openxlsx,
+    haven,
+    lubridate,
+    readr,
+    forcats,
+    lme4,
+    broom,
+    car

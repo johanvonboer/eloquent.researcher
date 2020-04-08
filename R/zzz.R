@@ -14,8 +14,16 @@
                            paste0(project.name,emuR:::emuDB.suffix))
     if(dir.exists(emuDBpath)){
       assign("EMUDB",emuR::load_emuDB(emuDBpath,verbose = FALSE), envir = .GlobalEnv)
+
+      if(git2r::in_repository(EMUDB$basePath) | length(git2r::branches(EMUDB$basePath))){
+        #Make sure that the database is current by
+        #checking out the master branch
+        git2r::checkout(path=emuDBpath)
+      }
+
+
     }else{
-      warning("The database\'",emuDBpath,"\' does not exist.\n You will not have EMUDB global variable available to you in the session.")
+      warning("The database \'",emuDBpath,"\' does not exist.\n You will not have EMUDB global variable available to you in the session.")
     }
 
   }

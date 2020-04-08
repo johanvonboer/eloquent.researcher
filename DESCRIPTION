@@ -7,4 +7,5 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     emuR,
-    wrassp
+    wrassp,
+    git2r

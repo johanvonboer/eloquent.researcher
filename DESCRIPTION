@@ -3,6 +3,9 @@ Title: This package sets up a well defined working environment for speech scienc
 Version: 0.0.0.9000
 Description: An emuR environment for Humlab DigiTal
 License: What license it uses
+Maintainers@R: c(
+    person("Fredrik", "Karlsson", email = "fredrik.k.karlsson@umu.se", role = c("cre","ctb"))
+    )
 Encoding: UTF-8
 LazyData: true
 Imports: 
@@ -17,11 +20,16 @@ Imports:
     ggsignif,
     ggsci,
     ggridges,
-    openxlsx,
     haven,
     lubridate,
     readr,
     forcats,
     lme4,
     broom,
-    car
+    car,
+    ggmosaic,
+    cowplot,
+    pwr,
+    pwr2,
+    purrr,
+    readxl

@@ -25,7 +25,15 @@
     }else{
       warning("The database \'",emuDBpath,"\' does not exist.\n You will not have EMUDB global variable available to you in the session.")
     }
-
+  }
+  #Sätt up en
+  resultsPath <- file.path(getwd(),
+                          "..",
+                          "Resultat")
+  if(dir.exists(resultsPath)){
+    assign("RESULTAT",resultsPath)
+  }else{
+    warning("The directory \'",resultsPath,"\' does not exist.\n You will not have RESULTAT global variable available to you in the session.")
   }
 }
 

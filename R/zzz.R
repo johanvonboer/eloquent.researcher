@@ -32,14 +32,16 @@
       warnings("Could not create a DATA reference to the project Data directory")
     }
     if(dir.exists(file.path(HS,"Results"))){
-      assign("RESULTS",file.path(HS,"Results"),envir = .GlobalEnv)
+      assign("RES",file.path(HS,"Results"),envir = .GlobalEnv)
     }else{
       warnings("Could not create a RESULTS reference to the project Results directory")
     }
     if(dir.exists(file.path(HS,"Applications"))){
-      assign("PROGRAMS",file.path(HS,"Programs"),envir = .GlobalEnv)
+      assign("APPS",file.path(HS,"Applications"),envir = .GlobalEnv)
+      #Move to the project directory
+      setwd(file.path(HS,"Applications"))
     }else{
-      warnings("Could not create a PROGRAMS reference to the project Programs directory")
+      warnings("Could not create a APPS reference to the project Programs directory")
     }
   }
 }
@@ -47,7 +49,7 @@
 .onUnLoad <- function(libname, pkgname) {
   if(exists("DB")){
     RSQLite::dbDisconnect(EMUDB$connection)
-    remove(list=c("DB","RESULTS","DATA","HS"),envir = .GlobalEnv)
+    remove(list=c("DB","RES","DATA","HS","APPS"),envir = .GlobalEnv)
   }
 
 }

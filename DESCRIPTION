@@ -1,7 +1,7 @@
 Package: eloquent.researcher
-Title: This package sets up a well defined working environment for speech science at Humlab DigiTal, Umeå University.
+Title: This package sets up a well defined working environment for VISP speech science at Humlab, Umeå University.
 Version: 0.0.0.9000
-Description: An emuR environment for Humlab DigiTal
+Description: An emuR environment for VISP
 License: What license it uses
 Maintainers@R: c(
     person("Fredrik", "Karlsson", email = "fredrik.k.karlsson@umu.se", role = c("cre","ctb"))

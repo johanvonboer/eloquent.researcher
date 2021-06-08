@@ -8,7 +8,7 @@ The primary purpose of the package is to set up an environment which bootstraps 
 
 > Data
 
-This is where the user should store all their raw data. Within this directory, the user will have a speech database "humlabspeech_emuDB" directory containing all their speech data. The user will not have to familiarize themselves with this directory though, as this package will make sure that the user always have `DATA` set up to point to the Data directory itself when loaded. Also, a `DB` that points to the project speech database will also be created at load time.
+This is where the user should store all their raw data. Within this directory, the user will have a speech database "VISP_emuDB" directory containing all their speech data. The user will not have to familiarize themselves with this directory though, as this package will make sure that the user always have `DATA` set up to point to the Data directory itself when loaded. Also, a `DB` that points to the project speech database will also be created at load time.
 
 > Documents
 
@@ -32,7 +32,7 @@ dir.create("~/Desktop/my-project/Results")
 dir.create("~/Desktop/my-project/Applications")
 emuR::create_emuRdemoData("~/Desktop/my-project")
 file.rename("~/Desktop/my-project/emuR_demoData","~/Desktop/my-project/Data")
-emuR::rename_emuDB("~/Desktop/my-project/Data/ae_emuDB/","humlabspeech")
+emuR::rename_emuDB("~/Desktop/my-project/Data/ae_emuDB/","VISP")
 ```
 If we then place ourselves at the base of the project directory, then the package "eloquent.researcher" will set up the predefined *global* variables for the user, so that `DB` immediately becomes available and can be used for accessing the database.
 
@@ -40,21 +40,21 @@ If we then place ourselves at the base of the project directory, then the packag
 > setwd("~/Desktop/")
 > library("eloquent.researcher")
 > DB
-[1] "<emuDBhandle> (dbName = 'src', basePath = '[....]/Desktop/my-project/Data/humlabspeech_emuDB')"
+[1] "<emuDBhandle> (dbName = 'src', basePath = '[....]/Desktop/my-project/Data/VISP_emuDB')"
 > emuR::list_files(DB)
 # A tibble: 28 x 4
    session bundle   file                absolute_file_path                                                                                   
    <chr>   <chr>    <chr>               <chr>                                                                                                
- 1 0000    msajc003 msajc003_annot.json /Users/frkkan96/Desktop/my-project/Data/humlabspeech_emuDB/0000_ses/msajc003_bndl/msajc003_annot.json
- 2 0000    msajc003 msajc003.dft        /Users/frkkan96/Desktop/my-project/Data/humlabspeech_emuDB/0000_ses/msajc003_bndl/msajc003.dft       
- 3 0000    msajc003 msajc003.fms        /Users/frkkan96/Desktop/my-project/Data/humlabspeech_emuDB/0000_ses/msajc003_bndl/msajc003.fms       
- 4 0000    msajc003 msajc003.wav        /Users/frkkan96/Desktop/my-project/Data/humlabspeech_emuDB/0000_ses/msajc003_bndl/msajc003.wav       
- 5 0000    msajc010 msajc010_annot.json /Users/frkkan96/Desktop/my-project/Data/humlabspeech_emuDB/0000_ses/msajc010_bndl/msajc010_annot.json
- 6 0000    msajc010 msajc010.dft        /Users/frkkan96/Desktop/my-project/Data/humlabspeech_emuDB/0000_ses/msajc010_bndl/msajc010.dft       
- 7 0000    msajc010 msajc010.fms        /Users/frkkan96/Desktop/my-project/Data/humlabspeech_emuDB/0000_ses/msajc010_bndl/msajc010.fms       
- 8 0000    msajc010 msajc010.wav        /Users/frkkan96/Desktop/my-project/Data/humlabspeech_emuDB/0000_ses/msajc010_bndl/msajc010.wav       
- 9 0000    msajc012 msajc012_annot.json /Users/frkkan96/Desktop/my-project/Data/humlabspeech_emuDB/0000_ses/msajc012_bndl/msajc012_annot.json
-10 0000    msajc012 msajc012.dft        /Users/frkkan96/Desktop/my-project/Data/humlabspeech_emuDB/0000_ses/msajc012_bndl/msajc012.dft       
+ 1 0000    msajc003 msajc003_annot.json /Users/frkkan96/Desktop/my-project/Data/VISP_emuDB/0000_ses/msajc003_bndl/msajc003_annot.json
+ 2 0000    msajc003 msajc003.dft        /Users/frkkan96/Desktop/my-project/Data/VISP_emuDB/0000_ses/msajc003_bndl/msajc003.dft       
+ 3 0000    msajc003 msajc003.fms        /Users/frkkan96/Desktop/my-project/Data/VISP_emuDB/0000_ses/msajc003_bndl/msajc003.fms       
+ 4 0000    msajc003 msajc003.wav        /Users/frkkan96/Desktop/my-project/Data/VISP_emuDB/0000_ses/msajc003_bndl/msajc003.wav       
+ 5 0000    msajc010 msajc010_annot.json /Users/frkkan96/Desktop/my-project/Data/VISP_emuDB/0000_ses/msajc010_bndl/msajc010_annot.json
+ 6 0000    msajc010 msajc010.dft        /Users/frkkan96/Desktop/my-project/Data/VISP_emuDB/0000_ses/msajc010_bndl/msajc010.dft       
+ 7 0000    msajc010 msajc010.fms        /Users/frkkan96/Desktop/my-project/Data/VISP_emuDB/0000_ses/msajc010_bndl/msajc010.fms       
+ 8 0000    msajc010 msajc010.wav        /Users/frkkan96/Desktop/my-project/Data/VISP_emuDB/0000_ses/msajc010_bndl/msajc010.wav       
+ 9 0000    msajc012 msajc012_annot.json /Users/frkkan96/Desktop/my-project/Data/VISP_emuDB/0000_ses/msajc012_bndl/msajc012_annot.json
+10 0000    msajc012 msajc012.dft        /Users/frkkan96/Desktop/my-project/Data/VISP_emuDB/0000_ses/msajc012_bndl/msajc012.dft       
 # … with 18 more rows
 ```
 

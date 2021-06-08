@@ -3,7 +3,7 @@
   pdir <- dir(pattern="*-project")
 
   if(! length(pdir) ==  1 ){
-    baseDir <- "humlabspeech"
+    baseDir <- "project"
   }else{
     baseDir <- pdir
   }
@@ -19,12 +19,12 @@
       warning("Unable to set up pointers to HS, DB, DATA and RESULTS.")
     }
   }else{
-    #Make HS available as a reference to the "humlabspeech" directory globaly
+    #Make HS available as a reference to the "VISP" directory globaly
     assign("HS",file.path(getwd(),baseDir))
     if(dir.exists(file.path(HS,"Data"))){
       assign("DATA",file.path(HS,"Data"),envir = .GlobalEnv)
-      if(dir.exists(file.path(DATA,"humlabspeech_emuDB"))){
-        assign("DB",emuR::load_emuDB(file.path(DATA,"humlabspeech_emuDB")),envir = .GlobalEnv)
+      if(dir.exists(file.path(DATA,"VISP_emuDB"))){
+        assign("DB",emuR::load_emuDB(file.path(DATA,"VISP_emuDB")),envir = .GlobalEnv)
       }else{
         warnings("Could not create a DB reference to the speech database")
       }

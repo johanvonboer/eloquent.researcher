@@ -3,7 +3,7 @@
   pdir <- dir(pattern="*-project")
 
   if(! length(pdir) ==  1 ){
-    baseDir <- "project"
+    baseDir <- ""
   }else{
     baseDir <- pdir
   }
